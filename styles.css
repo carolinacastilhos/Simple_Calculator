@@ -1,0 +1,84 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.nav-bar {
+    background-color:rgba(84, 171, 202, 0.571);
+}
+
+.photo {
+    width: 50px;
+    border-radius: 1020px;
+    margin: 10px 10px; 
+    box-shadow: 2px 2px 11px 0px;   
+}
+
+h2 {
+    color:rgb(66, 66, 66);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+body {
+    background-color: rgba(255, 255, 255, 0.911);
+}
+
+
+h1 {
+    margin-left: 72px;
+    margin-top: 40px;
+    font-family: 'IBM Plex Mono', monospace;
+    color:rgb(83, 156, 182);
+}
+
+.calculator {    
+    margin: 80px;
+    width: 200px;
+    height: 380px;
+    border-radius: 8%;
+    background-color: rgb(66, 66, 66);
+    box-shadow: 5px 6px 11px 2px;
+    font-family: 'Rubik', sans-serif;    
+}
+
+.previus-operand {
+    color: rgba(0, 0, 0, 0.564);   
+}
+
+.output {
+    border: 2px solid rgb(131, 131, 131);
+    background-color: rgb(152, 152, 152);
+    padding: 10px;
+    margin: 20px 10px;
+    border-radius: 10%;
+    text-align: right; 
+    font-size: 18px;   
+}
+
+.round {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 1px;
+    background-color: rgb(199, 199, 199);
+    border: 1px solid rgb(131, 131, 131);
+    text-align: center;
+}
+ 
+/* .color-button {
+    background-color: rgba(184, 230, 184, 0.914);
+} */
+
+.long {
+    width: 85.7px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 1px;
+    background-color: rgb(199, 199, 199);
+    border: 1px solid rgb(131, 131, 131);
+    text-align: center;
+}
