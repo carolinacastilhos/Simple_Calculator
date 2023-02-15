@@ -7,12 +7,14 @@
 
 .nav-bar {
     background-color:rgba(84, 171, 202, 0.571);
+    display: flex;    
+    flex-direction: row;
 }
 
 .photo {
     width: 50px;
-    border-radius: 1020px;
-    margin: 10px 10px; 
+    border-radius: 50%;
+    margin: 10px 10px;
     box-shadow: 2px 2px 11px 0px;   
 }
 
@@ -20,7 +22,7 @@ h2 {
     color:rgb(66, 66, 66);
     font-family: 'IBM Plex Mono', monospace;
     font-size: 14px;
-    margin-left: 10px;
+    margin-top: 40px;
 }
 
 body {
@@ -41,12 +43,12 @@ h1 {
     border-radius: 8%;
     background-color: rgb(66, 66, 66);
     box-shadow: 5px 6px 11px 2px;
-    font-family: 'Rubik', sans-serif;
+    font-family: 'Rubik', sans-serif;   
 
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);           
+    transform: translate(-50%, -50%);
 }
 
 .previus-operand {
@@ -76,24 +78,34 @@ h1 {
 }
 
 .btn:hover {
-    background-color: rgba(76, 125, 174, 0.981);
+    background-color: rgb(240, 239, 239);
     transition: all .5s;
 }
- 
+
 .color {
     background-color: rgba(43, 96, 150, 0.914);
     color: white;
+}
+
+.color:hover {
+    background-color: rgba(76, 125, 174, 0.981);
+    transition: all .5s;
 }
 
 .dark {
     background-color: rgba(167, 167, 167, 0.914);
 }
 
+.dark:hover {
+    background-color: rgba(214, 214, 214, 0.914);
+    transition: all .5s;
+}
+
 .long {
     width: 85.7px;
     height: 40px;
     border-radius: 50%;
-    margin: 1px;
+    margin: 3.1px;
     background-color: rgba(167, 167, 167, 0.914);
     border: none;
     text-align: center;
@@ -102,6 +114,6 @@ h1 {
 }
 
 .long:hover {
-    background-color: rgba(76, 125, 174, 0.981);
+    background-color: rgba(214, 214, 214, 0.914);
     transition: all .5s;
 }
