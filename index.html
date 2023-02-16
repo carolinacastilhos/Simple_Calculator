@@ -10,7 +10,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/script.js" defer></script>
     <title>Calculator</title>
 </head>
 <body>
@@ -18,47 +19,49 @@
         <nav class="nav-bar">
             <img class="photo" src="img/perfil.jpg" alt="User-photograph">
             <h2>Hello, Carol!</h2>
-        </nav>
-        <h1>Do the math!</h1>
+        </nav>        
     </header>
-<div class="calculator">
-    <div class="output">
-        <div class="previus-operand">2 x 10</div>
-        <div class="current-operand">= 20</div>
-    </div>
-    <div class="buttons">
-        <div>
-            <button class="btn">AC</button>
-            <button class="btn">±</button>
-            <button class="btn">%</button>
-            <button class="btn color">÷</button>
-        </div>        
-
-        <div>
-            <button class="btn dark">7</button>
-            <button class="btn dark">8</button>
-            <button class="btn dark">9</button>
-            <button class="btn color">x</button>
+<div>
+    <h1>Do the math!</h1>
+    <div class="calculator">
+        <div class="output">
+            <div class="last-operation">2 x 10</div>
+            <div class="current-operation">= 20</div>
         </div>
+        <div class="buttons">
+            <div>
+                <button class="btn">AC</button>
+                <button class="btn">C</button>
+                <button class="btn">%</button>
+                <button class="btn color">÷</button>
+            </div>        
 
-        <div>
-            <button class="btn dark">4</button>
-            <button class="btn dark">5</button>
-            <button class="btn dark">6</button>
-            <button class="btn color">-</button>
-        </div>
+            <div>
+                <button class="btn dark">7</button>
+                <button class="btn dark">8</button>
+                <button class="btn dark">9</button>
+                <button class="btn color">x</button>
+            </div>
 
-        <div>
-            <button class="btn dark">1</button>
-            <button class="btn dark">2</button>
-            <button class="btn dark">3</button>
-            <button class="btn color">+</button>
-        </div>
+            <div>
+                <button class="btn dark">4</button>
+                <button class="btn dark">5</button>
+                <button class="btn dark">6</button>
+                <button class="btn color">-</button>
+            </div>
 
-        <div>
-            <button class="long">0</button>
-            <button class="btn dark">.</button>
-            <button class="btn color">=</button>
+            <div>
+                <button class="btn dark">1</button>
+                <button class="btn dark">2</button>
+                <button class="btn dark">3</button>
+                <button class="btn color">+</button>
+            </div>
+
+            <div>
+                <button class="long">0</button>
+                <button class="btn dark">.</button>
+                <button class="btn color">=</button>
+            </div>
         </div>
     </div>    
 </div>    
