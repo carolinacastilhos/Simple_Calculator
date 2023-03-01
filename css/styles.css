@@ -54,7 +54,13 @@ h1 {
 }
 
 .last-operation {
-    color: rgba(26, 26, 26, 0.564);   
+    color: rgba(26, 26, 26, 0.564); 
+}
+
+.last-operation, 
+.current-operation {
+    overflow-wrap: break-word;
+    min-height: 1.6em; 
 }
 
 .output {
