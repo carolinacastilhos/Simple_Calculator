@@ -1,41 +1,135 @@
-const lastOperationText = document.querySelector(".last-operation")
-const currentOperationText = document.querySelector(".current-operation")
-const buttons = document.querySelectorAll(".buttons button")
+// seleção dos elementos
+const previousOperationText = document.querySelector(".previous-operation");
+const currentOperationText = document.querySelector(".current-operation");
+const buttons = document.querySelectorAll(".buttons button");
 
+// lógica da aplicação
 class Calculator {
-    construtctor(lastOperationText, currentOperationText) {
-        this.lastOperationText = lastOperationText
-        this.currentOperationText = currentOperationText
-        this.currentOperation = ""
+  constructor(previousOperationText, currentOperationText) {
+    this.previousOperationText = previousOperationText;
+    this.currentOperationText = currentOperationText;
+    this.currentOperation = "";
+  }
+
+  // métodos
+  addDigit(digit) {
+    //checando se a operação atual já possui um ponto
+    if (digit === "." && this.currentOperationText.innerText.includes(".")) {
+      return;
     }
-  
-    
-   addDigit(digit) {
-    
-    // if(digit === "." && this.currentOperationText.innerText.includes(".")) {
-    //     return;
-    // }
 
     this.currentOperation = digit;
     this.updateScreen();
-   } 
-    
-   updateScreen() {
-    this.currentOperationText.innerText += this.currentOperation;
-   }
+  }
 
+  processOperation(operation) {
+    //checando se a operação atual está vazia
+    if (this.currentOperationText.innerText === "" && operation !== "C") {
+      if (this.previousOperationText.innerText !== "") {
+        this.changeOperation(operation);
+      }
+      return;
+    }
+
+    let operationValue;
+    const previous = +this.previousOperationText.innerText.split(" ")[0];
+    const current = +this.currentOperationText.innerText;
+
+    switch (operation) {
+      case "+":
+        operationValue = previous + current;
+        this.updateScreen(operationValue, operation, current, previous);
+        break;
+      case "-":
+        operationValue = previous - current;
+        this.updateScreen(operationValue, operation, current, previous);
+        break;
+      case "÷":
+        operationValue = previous / current;
+        this.updateScreen(operationValue, operation, current, previous);
+        break;
+      case "x":
+        operationValue = previous * current;
+        this.updateScreen(operationValue, operation, current, previous);
+        break;
+      case "DEL":
+        this.processDelOperator();
+        break;
+      case "CE":
+        this.processClearCurrentOperation();
+        break;
+      case "C":
+        this.processClearOperation();
+        break;
+      case "=":
+        this.processEqualsOperator();
+        break;
+      default:
+        return;
+    }
+  }
+
+  updateScreen(
+    operationValue = null,
+    operation = null,
+    current = null,
+    previous = null
+  ) {
+    if (operationValue === null) {
+      this.currentOperationText.innerText += this.currentOperation;
+    } else {
+      if (previous === 0) {
+        operationValue = current;
+      }
+
+      this.previousOperationText.innerText = `${operationValue} ${operation}`;
+      this.currentOperationText.innerText = "";
+    }
+  }
+
+  changeOperation(operation) {
+    const mathOperations = ["+", "-", "x", "÷"];
+
+    if (!mathOperations.includes(operation)) {
+      return;
+    }
+
+    this.previousOperationText.innerText =
+      this.previousOperationText.innerText.slice(0, -1) + operation;
+  }
+
+  processDelOperator() {
+    this.currentOperationText.innerText =
+      this.currentOperationText.innerText.slice(0, -1);
+  }
+
+  processClearCurrentOperation() {
+    this.currentOperationText.innerText = "";
+  }
+
+  processClearOperation() {
+    this.currentOperationText.innerText = "";
+    this.previousOperationText.innerText = "";
+  }
+
+  processEqualsOperator() {
+    const operation = previousOperationText.innerText.split(" ")[1];
+    this.processOperation(operation);
+  }
 }
 
-const calc = new Calculator(lastOperationText, currentOperationText);
+const calc = new Calculator(previousOperationText, currentOperationText);
 
-buttons.forEach((btn)=> {
-    btn.addEventListener("click", (e) => {
-        const value = e.target.innerText;
+// eventos utilizados
+buttons.forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    const value = e.target.innerText;
 
-        if (+value >= 0 || value === ".") {
-            calc.addDigit(value);
-        }else {
-            console.log("Op: " + value);
-        }
-    });
+    if (+value >= 0 || value === ".") {
+      console.log(value);
+      calc.addDigit(value);
+    } else {
+      calc.processOperation(value);
+    }
+  });
 });
