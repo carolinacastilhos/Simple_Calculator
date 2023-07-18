@@ -133,3 +133,19 @@ buttons.forEach((btn) => {
     }
   });
 });
+
+// Dark/Light Mode
+function changeMode() {
+  button.classList.toggle(darkModeClass);
+  body.classList.toggle(darkModeClass);
+  footer.classList.toggle(darkModeClass);
+  calculator.classList.toggle(darkModeClass);
+}
+
+const darkModeClass = "dark-mode";
+const button = document.getElementById("mode-selector");
+const body = document.getElementsByTagName("body")[0];
+const footer = document.getElementsByTagName("footer")[0];
+const calculator = document.getElementById("calculator");
+
+button.addEventListener("click", changeMode);
