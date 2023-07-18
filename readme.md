@@ -4,9 +4,7 @@
 
 <div align="center">Take a look:<a href="https://simplecalculatorcarol.netlify.app/" target="_blank"> Simple Calculator</a> </div> <br />
 
-<!-- <div align="center"><img src="https://user-images.githubusercontent.com/117789578/236359107-29227f37-2eea-4a97-92d7-104a675d891b.jpg" width="200px" /></div> -->
-
-![til](img/Calculadora.gif)
+<img src="img/Calculadora.gif" alt="gif da calculadora e suas funcionalidades" width="200"/>
 
 ## 💻 Technologies used
 
